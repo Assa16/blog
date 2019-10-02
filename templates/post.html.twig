@@ -1,0 +1,11 @@
+{% extends "layouts/default.html.twig"%}
+{% block content %}
+<h1>Le post correspondant à l’id en paramètre de la route </h1>
+<ul>
+    {% for post in POSTS %}
+        <li> l'id du post : {{post.id}}</li>
+        <li> Le titre : {{post.title}}</li>
+        <li> Le contenue du post : {{post.content}}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

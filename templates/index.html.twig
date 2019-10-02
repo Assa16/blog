@@ -1,0 +1,20 @@
+{% extends "layouts/default.html.twig"%}
+{% block content %}
+<h4> Bonjour {{name}} </h4>
+<a href="deconnection"><input type="submit" value="logout"/></a>
+<form action="posts/create" method="POST">
+    <label for="title">Votre titre</label>
+    <input id="title" name="title" type="text"/>
+    <label for="content">Votre contenu</label>
+    <input id="content" name="content" type="content" />
+    <input name="user_id" type="hidden" value="{{id}}"/>
+    <input type="submit" value='post'/> 
+</form>
+<h1>Les Posts dans l'orde décroissant par ID</h1>
+<ul>
+    {% for post in display_post %}
+        <li>L'id du post numero: {{post.id}}, Le titre: {{post.title}}, Le contenu: {{post.content}}</li>
+        <hr/>
+    {% endfor %}
+</ul>
+{% endblock %}
